@@ -9,6 +9,9 @@ on:
   #     - master
   watch:
     types: started
+  schedule:
+    #国际时间要早8h，现在调整为0点10分运行,因为有时候会有误差
+    - cron: '10 16 * * *'
     
 env:
   JD_COOKIE: ${{ secrets.JD_COOKIE }}
