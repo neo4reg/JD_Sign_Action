@@ -73,6 +73,7 @@ function sendNotificationIfNeed() {
     json: true,
     method: 'POST'
   }
+  console.log(options)
 
   rp.post(options).then(res=>{
     const code = res['errno'];
