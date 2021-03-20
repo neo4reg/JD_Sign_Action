@@ -59,9 +59,11 @@ function sendNotificationIfNeed() {
 
   let desp = fs.readFileSync(result_path, "utf8")
   console.log(desp)
-  let text = "京东1:" + desp.match(/【签到奖励】: (.+)【其他奖励】: /)[1]
-  console.log(text)
-
+  try {
+    let text = "京东1:" + desp.match(/【签到奖励】: (.+)【其他奖励】: /)[1]
+  } catch (error) {
+    let text = "京东1"
+  }
   // 去除末尾的换行
   let SCKEY = push_key.replace(/[\r\n]/g,"")
 
