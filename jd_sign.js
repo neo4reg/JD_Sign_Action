@@ -61,7 +61,7 @@ function sendNotificationIfNeed() {
   console.log(desp)
   let text = "京东1"
   try {
-    text = "京东1:" + desp.match(/【签到奖励】:(.+)【其他奖励】/)[1]
+    text = "京东1:" + desp.match(/【签到奖励】:(.+)\n【其他奖励】/)[1]
   } catch (error) {
     text = "京东1: error"
   }
